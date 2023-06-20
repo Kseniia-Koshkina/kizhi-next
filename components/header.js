@@ -10,14 +10,12 @@ const Header=()=>{
         
         <div className="container pt-0 pt-md-3 containerColor" >
             {/* <!-- Шапка --> */}
-            <div className="container p-0 mb-4" >
+            <div className="container p-0 " >
                 {/* <!-- Логотип, Телефон, Время работы, Корзина --> */}
-                <div className="row mb-3">
+                <div className="row pb-3">
                     {/* <!-- Логотип --> */}
                     <div className=" col-12 col-md-3 pl-0 pr-0 pl-md-3 pr-md-3 ">
                         {/* <!--Навигация на телефонах--> */}
-
-
                         <nav className="d-md-none navbar navbar-expand-lg navbar-dark navigation">
                             <div className="container-fluid">
                                 <img className={"logo"} src="/images/logo_mobile.png" alt=""/>
@@ -44,7 +42,7 @@ const Header=()=>{
 
                         {/* <!--Лого--> */}
                         <a href="https://shop.kizhi.karelia.ru/" className="d-none d-md-flex p-0 ">
-                            <img className="logo" src="images/logo.jpg"/>
+                            <img className="logo" src="/images/logo.jpg"/>
                         </a>
                     </div>
 
@@ -64,7 +62,7 @@ const Header=()=>{
                                 
                             </div>
                         </div>
-                    </div>
+                    </div>  
 
                     {/* <!-- Корзина --> */}
                     <div className="col-3 d-none d-md-flex"> 

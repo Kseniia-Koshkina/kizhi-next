@@ -10,18 +10,18 @@ const Footer=()=>{
                 {/* <!-- YouTube --> */}
                 <div className="col youTube">                    
                     <a href="https://www.youtube.com/user/kizhimuseum">
-                        <img className='socnetlogo' src="images/youtube.svg" alt="YouTube logo" /> 
+                        <img className='socnetlogo' src="/images/youtube.svg" alt="YouTube logo" /> 
                     </a>                    
                 </div>
                 {/* <!-- VK --> */}
                 <div className="col VK">
                     <a href="https://vk.com/kizhi_museum">                 
-                        <img className='socnetlogo' src="images/vk.svg" alt="VK logo" />
+                        <img className='socnetlogo' src="/images/vk.svg" alt="VK logo" />
                     </a>
                     
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 
     {/* <!-- Контактная информация --> */}
@@ -31,7 +31,7 @@ const Footer=()=>{
                 {/* <!-- Лого, тел и время работы --> */}
                 <div className="col ">
                     <div className="mb-3">
-                        <img className="logo" src="images/logo_mobile.png" alt="logo"/>
+                        <img className="logo" src="/images/logo_mobile.png" alt="logo"/>
                     </div>
                     <div className="mb-3">
                         <span>
@@ -75,7 +75,7 @@ const Footer=()=>{
                             </div>
                             <div className="form-check">
                                 <input type="checkbox" className="form-check-input" id="check"/>
-                                <label className="form-check-label" for="check">Нажимая на кнопку, я принимаю условия соглашения.</label>
+                                <label className="form-check-label">Нажимая на кнопку, я принимаю условия соглашения.</label>
                             </div>
                            
                         </form>
@@ -86,13 +86,13 @@ const Footer=()=>{
     </div>
 
     {/* Нижняя полоса */}
-    <div class="container-fluid " style={{backgroundColor: " #6C757D"}}>
-        <div class="text-white container bottomLineLayout" >
-            <div class="row">
-                <div class="col-6">
+    <div className="container-fluid " style={{backgroundColor: " #6C757D"}}>
+        <div className="text-white container bottomLineLayout" >
+            <div className="row">
+                <div className="col-6">
                     <a href="#">Наверх</a>
                 </div>
-                <div class="col-6" style={{textAlign:"right"}}>
+                <div className="col-6" style={{textAlign:"right"}}>
                     <p>© Музей-Заповедник Кижи, 2023</p>
                 </div>
             </div>

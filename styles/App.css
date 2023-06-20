@@ -1,5 +1,5 @@
 .containerImg{
-    background-image: url("bg.jpg");   
+    background-image: url("/images/bg.jpg");    
     background-attachment: fixed;
 }
 .containerColor{
@@ -100,4 +100,19 @@ input[type="number"]::-webkit-inner-spin-button {
 .socnetlistLI{
     display: inline-block;
     margin-right: 5px;
+}
+.star{
+    font-size: 20px; 
+    color: #949494;
+}
+.starrate{
+    color:#343434;
+}
+.describtion_card{
+    font-size: 20px;
+    max-width: 80%; 
+    margin:auto;
+}
+.describtion_card_button{
+    visibility: visible;
 }
