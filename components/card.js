@@ -8,7 +8,7 @@ const Card=({item})=>{
                 {item.images.map((image,index)=>{
                     return(
                         <Carousel.Item key={index}>
-                            <Link  href="/describtion/1">
+                            <Link  href="/description/1">
                                 <img 
                                 className="d-block w-100"
                                 src={image}

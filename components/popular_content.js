@@ -1,75 +1,24 @@
 import 'styles/App.css';
 import Card from "./card.js";
+import React, { useState, useEffect } from 'react'
 
 
-const items=[
-    {
-        id:1,
-        name:"Книга Остров Преображения",
-        price:1540,
-        images:[
-            "/images/Книга Остров Преображения/1_image.jpg",
-            "/images/Книга Остров Преображения/2_image.jpg",
-            "/images/Книга Остров Преображения/3_image.jpg",
-            "/images/Книга Остров Преображения/4_image.jpg",
-            "/images/Книга Остров Преображения/5_image.jpg"
-        ]
-    },
-    {
-        id:1,
-        name:"Книга Остров Преображения",
-        price:1540,
-        images:[
-            "/images/Книга Остров Преображения/1_image.jpg",
-            "/images/Книга Остров Преображения/2_image.jpg",
-            "/images/Книга Остров Преображения/3_image.jpg",
-            "/images/Книга Остров Преображения/4_image.jpg",
-            "/images/Книга Остров Преображения/5_image.jpg"
-        ]
-    },
-    {
-        id:1,
-        name:"Книга Остров Преображения",
-        price:1540,
-        images:[
-            "/images/Книга Остров Преображения/1_image.jpg",
-            "/images/Книга Остров Преображения/2_image.jpg",
-            "/images/Книга Остров Преображения/3_image.jpg",
-            "/images/Книга Остров Преображения/4_image.jpg",
-            "/images/Книга Остров Преображения/5_image.jpg"
-        ]
-    },
-    {
-        id:1,
-        name:"Книга Остров Преображения",
-        price:1540,
-        images:[
-            "/images/Книга Остров Преображения/1_image.jpg",
-            "/images/Книга Остров Преображения/2_image.jpg",
-            "/images/Книга Остров Преображения/3_image.jpg",
-            "/images/Книга Остров Преображения/4_image.jpg",
-            "/images/Книга Остров Преображения/5_image.jpg"
-        ]
-    },
-    {
-        id:1,
-        name:"Книга Остров Преображения",
-        price:1540,
-        images:[
-            "/images/Книга Остров Преображения/1_image.jpg",
-            "/images/Книга Остров Преображения/2_image.jpg",
-            "/images/Книга Остров Преображения/3_image.jpg",
-            "/images/Книга Остров Преображения/4_image.jpg",
-            "/images/Книга Остров Преображения/5_image.jpg"
-        ]
-    },
 
-]
 
 
 const Popular=()=>{
-    //let listRowsOut = divide(items);
+    const [items,setItems]= useState([{id:1,name:"",price:0,images:["",]},]);
+
+    useEffect( ()=>{
+        fetch("http://localhost:3000/api/products")
+        .then((resp)=>resp.json())
+        .then((res)=>
+        setItems(res));
+    },[])
+    
+
     return(
+        
         <div className="container p-0 pb-4 pt-4 containerColor" >
             <div className='container p-0'>
                 <div className="row">

@@ -6,7 +6,7 @@ import Describtion from "../../components/description";
 import { getAllPostIds,getPostData } from '../../lib/allItems.js';
 
 export async function getStaticPaths() {
-    const paths = getAllPostIds();
+    const paths = await getAllPostIds();
     return {
       paths,
       fallback: false,
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   }
 
 export async function getStaticProps({ params }) {
-const postData = getPostData(params.id);
+const postData = await getPostData(params.id);
 return {
     props: {
         postData,
