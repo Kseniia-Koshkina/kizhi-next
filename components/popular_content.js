@@ -10,7 +10,7 @@ const Popular=()=>{
     const [items,setItems]= useState([{id:1,name:"",price:0,images:["",]},]);
 
     useEffect( ()=>{
-        fetch("http://localhost:3000/api/products")
+        fetch("http://localhost:3000/api/getProducts")
         .then((resp)=>resp.json())
         .then((res)=>
         setItems(res));
@@ -20,7 +20,7 @@ const Popular=()=>{
     return(
         
         <div className="container p-0 pb-4 pt-4 containerColor" >
-            <div className='container p-0'>
+            <div className='container '>
                 <div className="row">
                     {/* <!--Каталог--> */}
                     <div className="col-md-9 col-sm-8">

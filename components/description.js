@@ -5,14 +5,14 @@ import 'styles/App.css';
 const Description=({item})=>{
     
     
-    
+    const url = "/images/"+item.name+"/";
     return(
         <>
         <div className="container pt-0 pt-md-3 containerColor" >
             <div className="container p-0 mb-4">
                 <div className="input-group flex-nowrap mb-4">                            
                     <input type="text" className="form-control"/>
-                    <button type="button"><img src="images/icon-search.svg"></img></button>
+                    <button type="button"><img src="/images/icon-search.svg"></img></button>
                 </div>   
             </div>
 
@@ -27,38 +27,32 @@ const Description=({item})=>{
                             {/* <!--Карусель--> */}
                             <div className="col-md">
                             <Carousel>
-                            
+                                    {/* {item.images.map((image)=>{
+                                        return (
+                                            <Carousel.Item >
+
+                                                <img 
+                                                className="d-block w-100"
+                                                src={url+image}
+                                                alt="slide"
+                                                
+                                                />    
+                                                
+                                            </Carousel.Item>
+                                        )
+                                    })} */}
                                     <Carousel.Item >
-                                       
-                                            <img 
-                                            className="d-block w-100"
-                                            src="/images/Книга Остров Преображения/1_image.jpg"
-                                            alt="slide"
-                                            
-                                            />    
-                                        
-                                    </Carousel.Item>
-                                    <Carousel.Item >
-                                       
-                                       <img 
-                                       className="d-block w-100"
-                                       src="/images/Книга Остров Преображения/2_image.jpg"
-                                       alt="slide"
-                                       
-                                       />    
-                                   
-                               </Carousel.Item>
-                               <Carousel.Item >
-                                       
-                                       <img 
-                                       className="d-block w-100"
-                                       src="/images/Книга Остров Преображения/3_image.jpg"
-                                       alt="slide"
-                                       
-                                       />    
-                                   
-                               </Carousel.Item>
-                            </Carousel>
+
+                                        <img 
+                                        className="d-block w-100"
+                                        src=""
+                                        alt="slide"
+
+                                        />    
+
+                                        </Carousel.Item>
+                               
+                                    </Carousel>
                             </div>
                             {/* <!--Цена--> */}
                             <div className="col-md-4">

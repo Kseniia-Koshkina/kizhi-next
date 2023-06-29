@@ -2,16 +2,17 @@ import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
 
 const Card=({item})=>{
+    const url = "/images/"+item.name+"/";
     return(     
             <div className="card">                   
                 <Carousel>
                 {item.images.map((image,index)=>{
                     return(
                         <Carousel.Item key={index}>
-                            <Link  href="/description/1">
+                            <Link  href="/description/000000001">
                                 <img 
                                 className="d-block w-100"
-                                src={image}
+                                src={url+image}
                                 alt="slide"
                                  
                                 />    
