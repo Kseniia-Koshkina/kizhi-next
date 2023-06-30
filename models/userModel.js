@@ -11,7 +11,6 @@ const productSchema = new Schema({
     rating: Number
 });
 
-
 const userSchema = new Schema({
     name: String,
     basket: [productSchema]

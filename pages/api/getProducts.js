@@ -14,6 +14,6 @@ export default async function handler(req,res){
         res.status(201).send(products);
     }
     catch{
-        res.statis(400).send({msg:"Error"})
+        res.status(400).send({msg:"Error"})
     }
 }
