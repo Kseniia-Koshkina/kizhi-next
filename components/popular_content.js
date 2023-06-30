@@ -7,7 +7,8 @@ import React, { useState, useEffect } from 'react'
 
 
 const Popular=()=>{
-    const [items,setItems]= useState([{id:1,name:"",price:0,images:["",]},]);
+    // const [items,setItems]= useState([{id:1,name:"default",price:0,images:["default.jpg"]},]);
+    const [items,setItems]= useState([]);
 
     useEffect( ()=>{
         fetch("http://localhost:3000/api/getProducts")
@@ -16,7 +17,7 @@ const Popular=()=>{
         setItems(res));
     },[])
     
-
+    let index=100;
     return(
         
         <div className="container p-0 pb-4 pt-4 containerColor" >
@@ -27,7 +28,8 @@ const Popular=()=>{
                         <h2 className="mb-4" >Популярные товары</h2>
                         {/* <!-- Каталог --> */}
                         <div className="row">
-                        {items.map((item, index)=>{ 
+                        {items.map((item)=>{
+                            index+=1;
                             return(
                                 <div key={index} className="col-md-4 col-sm-6 pb-3">
                                     <Card item={item}></Card> 
@@ -70,7 +72,6 @@ const Popular=()=>{
                 </div>   
             </div>
         </div>
-        
     )
 }
 

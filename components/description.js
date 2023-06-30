@@ -6,6 +6,8 @@ const Description=({item})=>{
     
     
     const url = "/images/"+item.name+"/";
+
+    
     return(
         <>
         <div className="container pt-0 pt-md-3 containerColor" >
@@ -15,8 +17,6 @@ const Description=({item})=>{
                     <button type="button"><img src="/images/icon-search.svg"></img></button>
                 </div>   
             </div>
-
-
             <div className="container p-0 pb-4" >
                 <h1 className="mb-4">{item.name}</h1>
                 {/* <!--Описание--> */}
@@ -27,9 +27,10 @@ const Description=({item})=>{
                             {/* <!--Карусель--> */}
                             <div className="col-md">
                             <Carousel>
-                                    {/* {item.images.map((image)=>{
+                                    {item.images.map((image,index)=>{
+                                        
                                         return (
-                                            <Carousel.Item >
+                                            <Carousel.Item key={index}>
 
                                                 <img 
                                                 className="d-block w-100"
@@ -40,17 +41,8 @@ const Description=({item})=>{
                                                 
                                             </Carousel.Item>
                                         )
-                                    })} */}
-                                    <Carousel.Item >
-
-                                        <img 
-                                        className="d-block w-100"
-                                        src=""
-                                        alt="slide"
-
-                                        />    
-
-                                        </Carousel.Item>
+                                    })} 
+                                    
                                
                                     </Carousel>
                             </div>
@@ -90,8 +82,8 @@ const Description=({item})=>{
                     <div className="col-md-3 col-sm-4">
                         <h5>МЫ В СОЦСЕТЯХ</h5>
                         <ul className='socnetlistUL'>
-                            <li className={"socnetlistLI"}><a href="https://vk.com/kizhi_museum"><img src="/images/yt.png" /></a></li>
-                            <li className={"socnetlistLI"}><a href="https://www.youtube.com/user/kizhimuseum"><img src="/images/vk.png" /></a></li>
+                            <li className={"socnetlistLI"}><a href="https://vk.com/kizhi_museum" key ={11}><img src="/images/yt.png" /></a></li>
+                            <li className={"socnetlistLI"}><a href="https://www.youtube.com/user/kizhimuseum" key={12}><img src="/images/vk.png" /></a></li>
                         </ul>
                     </div>
                                                            

@@ -25,8 +25,8 @@ const Footer=()=>{
     </div>
 
     {/* <!-- Контактная информация --> */}
-    <div className="container-fluid p-0" style={{backgroundColor:  "#343A40"}}>
-        <div className="container p-0 py-5">
+    <div className="container-fluid " style={{backgroundColor:  "#343A40"}}>
+        <div className="container py-5">
             <div className="row text-white">
                 {/* <!-- Лого, тел и время работы --> */}
                 <div className="col ">

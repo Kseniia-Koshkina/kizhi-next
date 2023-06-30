@@ -3,10 +3,36 @@ import Header from "../../components/header"
 import Footer from "../../components/footer" 
 import Describtion from "../../components/description";
 
-import { getAllPostIds,getPostData } from '../../lib/allItems.js';
 
 export async function getStaticPaths() {
-    const paths = await getAllPostIds();
+    let data=[
+      {
+        id:'1',
+        name:"default",
+        price:1540,
+        images:[
+            "default.jpg",
+        ],
+        describtion:"no description",
+        rating:0
+      },
+    ];
+    const response = await fetch("http://localhost:3000/api/getProducts",{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    });
+
+    data = await response.json();
+    let paths=[];
+    data.map((item) => {
+      paths.push( {
+        params: {
+          id: item.id,
+        }
+      });
+    });
     return {
       paths,
       fallback: false,
@@ -14,12 +40,33 @@ export async function getStaticPaths() {
   }
 
 export async function getStaticProps({ params }) {
-const postData = await getPostData(params.id);
-return {
-    props: {
-        postData,
+  let postData, data=[
+    {
+        id:'1',
+        name:"default",
+        price:1540,
+        images:[
+            "default.jpg",
+            
+        ],
+        description:"no description",
+        rating:0
     },
-};
+  ];
+  const response= await fetch("http://localhost:3000/api/getProducts");
+  data = await response.json();
+  
+
+  for(let i = 0; i< data.length;i++){
+      if (data[i].id==params.id){
+        postData =  data[i];
+      }
+  } 
+  return {
+      props: {
+          postData,
+      },
+  };
 }
 
 export default function Home({ postData }) {

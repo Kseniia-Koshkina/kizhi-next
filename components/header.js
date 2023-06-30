@@ -28,7 +28,7 @@ const Header=()=>{
                                     <a className="nav-link "  href="#">ИКОНЫ</a>
                                     </li>
                                     <li className="nav-item">
-                                    <a className="nav-link" href="#">КНИГИ</a>
+                                    <a className="nav-link" href="/books">КНИГИ</a>
                                     </li>
                                     <li className="nav-item">
                                     <a className="nav-link "  href="#">СУВЕНИРЫ</a>
@@ -47,7 +47,7 @@ const Header=()=>{
                     </div>
 
                     {/* <!-- Телефон и время работы --> */}
-                    <div className="col-12 col-md-6 ">
+                    <div className="col-12 col-md-6 pt-2" style={{textAlign:"center"}}>
                         <div className="row">
                             <div className="col ">
                                 <p >
@@ -72,13 +72,13 @@ const Header=()=>{
                 </div>
 
                 {/* <!--Навигация--> */}
-                <nav className="d-none navbar navbar-expand-md navbar-dark d-md-flex navigation">                       
+                <nav className="d-none navbar navbar-expand-md navbar-dark d-md-flex rounded navigation">                       
                     <ul className="navbar-nav">
                         <li className="nav-item">
                         <a className="nav-link" href="#">ИКОНЫ</a>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="#">КНИГИ</a>
+                        <a className="nav-link" href="/books">КНИГИ</a>
                         </li>
                         <li className="nav-item">
                         <a className="nav-link" href="#">СУВЕНИРЫ</a>

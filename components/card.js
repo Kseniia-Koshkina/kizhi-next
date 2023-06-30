@@ -1,15 +1,20 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
+import sentToBasket from '@/lib/sendToBasket';
 
-const Card=({item})=>{
-    const url = "/images/"+item.name+"/";
+
+const Card=(props)=>{
+    const url = "/images/"+ props.item.name+"/";
+    const nextPath = "/description/"+ props.item.id;
+   
     return(     
             <div className="card">                   
                 <Carousel>
-                {item.images.map((image,index)=>{
+
+                {props.item.images.map((image, index)=>{
                     return(
                         <Carousel.Item key={index}>
-                            <Link  href="/description/000000001">
+                            <Link  href={nextPath} >
                                 <img 
                                 className="d-block w-100"
                                 src={url+image}
@@ -22,12 +27,11 @@ const Card=({item})=>{
                 })}
                 </Carousel>
                 <div className="card-body" style={{textAlign: "center"}}>
-                    <p className="card-title">{item.name}</p>
-                    <p className="card-text">{item.price} руб.</p>
-                    <a href="#" className="btn btn-primary">В корзину</a>
+                    <p className="card-title">{props.item.name}</p>
+                    <p className="card-text">{props.item.price} руб.</p>
+                    <a href="#" className="btn btn-primary" >В корзину</a>
                 </div>
             </div>
-        
     )
 }
 

@@ -10,7 +10,13 @@ const productSchema = new Schema({
     images: [String],
     rating: Number
 });
-const Products = models.Products || model("Products", productSchema);
 
 
-export default Products; 
+const userSchema = new Schema({
+    name: String,
+    basket: [productSchema]
+});
+
+const Users = models.Users || model("Users", userSchema);
+
+export default Users;
