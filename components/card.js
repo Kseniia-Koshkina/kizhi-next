@@ -4,12 +4,32 @@ import Link from 'next/link';
 
 
 const Card=(props)=>{
+    const  sentToCart= async ()=>{
+        await fetch("http://localhost:3000/api/addItem",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            
+            body: JSON.stringify({
+                "name":"Игорь",
+                "item": {
+                    "id": props.item.id,
+                    "name": props.item.name,
+                    "price": props.item.price
+                }
+            })
+            
+        });
+        
+    }
+
     const url = "/images/"+ props.item.name+"/";
     const nextPath = "/description/"+ props.item.id;
    
     return(     
             <div className="card">                   
-                <Carousel>
+                <Carousel touch={true} interval={null}>
 
                 {props.item.images.map((image, index)=>{
                     return(
@@ -26,10 +46,10 @@ const Card=(props)=>{
                     )
                 })}
                 </Carousel>
-                <div className="card-body" style={{textAlign: "center"}}>
-                    <p className="card-title">{props.item.name}</p>
+                <div className="card-body itemCards" style={{textAlign: "center"}}>
+                    <p className="card-title one_line_text one_line_text" >{props.item.name}</p>
                     <p className="card-text">{props.item.price} руб.</p>
-                    <a href="#" className="btn btn-primary" >В корзину</a>
+                    <button onClick={()=>sentToCart()} className="btn btn-primary" >В корзину</button>
                 </div>
             </div>
     )

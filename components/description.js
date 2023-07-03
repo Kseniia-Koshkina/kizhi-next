@@ -14,7 +14,7 @@ const Description=({item})=>{
             <div className="container p-0 mb-4">
                 <div className="input-group flex-nowrap mb-4">                            
                     <input type="text" className="form-control"/>
-                    <button type="button"><img src="/images/icon-search.svg"></img></button>
+                    <button type="button" className="button_serch"><img src="/images/icon-search.svg"></img></button>
                 </div>   
             </div>
             <div className="container p-0 pb-4" >
@@ -26,13 +26,13 @@ const Description=({item})=>{
                         <div className="row">
                             {/* <!--Карусель--> */}
                             <div className="col-md">
-                            <Carousel>
+                                <Carousel >
                                     {item.images.map((image,index)=>{
                                         
                                         return (
                                             <Carousel.Item key={index}>
 
-                                                <img 
+                                                <img style={{borderRadius:"10px"}}
                                                 className="d-block w-100"
                                                 src={url+image}
                                                 alt="slide"
@@ -44,7 +44,7 @@ const Description=({item})=>{
                                     })} 
                                     
                                
-                                    </Carousel>
+                                </Carousel>
                             </div>
                             {/* <!--Цена--> */}
                             <div className="col-md-4">
@@ -62,7 +62,7 @@ const Description=({item})=>{
                                         </div> 
                                         <p id="total">шт</p>
                                         
-                                        <a href="#" className="btn btn-primary describtion_card_button" >КУПИТЬ</a>
+                                        <button className="button_visible btn btn-primary" >КУПИТЬ</button>
                                     </div>
                                 </div>
                             </div>  

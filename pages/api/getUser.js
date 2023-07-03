@@ -10,10 +10,10 @@ export default async function handler(req,res){
 
     try{
         await connectMongoDB();
-        const users = await Users.find({ });
+        const users = await Users.find();
         res.status(201).send(users);
     }
     catch{
-        res.statis(400).send({msg:"Error"});
+        res.status(400).send({msg:"Error"});
     }
 }

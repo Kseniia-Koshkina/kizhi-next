@@ -1,24 +1,21 @@
 import { connectMongoDB } from "@/lib/connectMongo";
-import Products from "@/models/productModel";
+import Users from "@/models/userModel";
 
 export default async function handler(req, res) {
     if (req.method!=="POST"){
         res.status(405).send("Only POST requests are allowed");
-        return;
+        return
     }
+
 
     try{
         await connectMongoDB();
-        const productItem = new Products({
-            id: req.body.id,
+        const user = new Users({
             name: req.body.name,
-            price: req.body.price,
-            popular: req.body.popular,
-            description: req.body.description,
-            images: req.body.images,
-            rating: req.body.rating
+            basket: []
         });
-        productItem.save()
+        
+        user.save()
         .then(()=>console.log("saved"));
         res.status(200).send("saved");
     }
@@ -27,4 +24,4 @@ export default async function handler(req, res) {
     }
 
     
-}       
+} 

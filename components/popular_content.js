@@ -41,8 +41,8 @@ const Popular=()=>{
                     {/* <!--Боковая панель--> */}
                     <div className="col">                    
                         <div className="input-group flex-nowrap mb-4">                            
-                            <input type="text" className="form-control"/>
-                            <button type="button"><img src="/images/icon-search.svg"></img></button>
+                            <input type="text" className="form-control "/>
+                            <button type="button" className='button_serch'><img src="/images/icon-search.svg"></img></button>
                         </div>   
                         
                         
