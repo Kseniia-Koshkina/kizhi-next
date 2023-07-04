@@ -125,3 +125,25 @@ input[type="number"]::-webkit-inner-spin-button {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.cart_image{
+    max-height: 80px;
+    width: auto;
+    padding: 5px;
+}
+.cart_cross{
+    height: 32px;
+    width:auto; 
+    position: absolute; 
+    left: 1; 
+    top: 0; 
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    margin-right: 15px;
+}
+                    
+.empty_cart_text{
+    color:#949494;
+    padding-top: 30px;
+}

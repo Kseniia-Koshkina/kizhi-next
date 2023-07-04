@@ -2,11 +2,31 @@ import Star from "./star.js"
 import Carousel from 'react-bootstrap/Carousel';
 import 'styles/App.css';
 
-const Description=({item})=>{
+const Description=(props)=>{
     
     
-    const url = "/images/"+item.name+"/";
+    const url = "/images/"+props.item.name+"/";
+    
 
+    const  sentToCart= async ()=>{
+        await fetch("http://localhost:3000/api/addItem",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            
+            body: JSON.stringify({
+                "name":"Игорь",
+                "item": {
+                    "id": props.item.id,
+                    "name": props.item.name,
+                    "price": props.item.price
+                }
+            })
+            
+        });
+        
+    }
     
     return(
         <>
@@ -18,7 +38,7 @@ const Description=({item})=>{
                 </div>   
             </div>
             <div className="container p-0 pb-4" >
-                <h1 className="mb-4">{item.name}</h1>
+                <h1 className="mb-4">{props.item.name}</h1>
                 {/* <!--Описание--> */}
                 <div className="row">
                     {/* <!--Карусель цена описание--> */}
@@ -27,7 +47,7 @@ const Description=({item})=>{
                             {/* <!--Карусель--> */}
                             <div className="col-md">
                                 <Carousel >
-                                    {item.images.map((image,index)=>{
+                                    {props.item.images.map((image,index)=>{
                                         
                                         return (
                                             <Carousel.Item key={index}>
@@ -51,8 +71,8 @@ const Description=({item})=>{
                                 <div className="card">
                                     {/* <!--Цена--> */}
                                     <div className="card-body" style={{textAlign: "center"}}>
-                                        <p className='star'><Star num={item.rating}></Star></p>
-                                        <p className="card-text" style={{fontSize: "28px"}}>{item.price} руб.</p>
+                                        <p className='star'><Star num={props.item.rating}></Star></p>
+                                        <p className="card-text" style={{fontSize: "28px"}}>{props.item.price} руб.</p>
 
 
                                         <div className="input-group flex-nowrap mb-4 describtion_card" >   
@@ -62,7 +82,7 @@ const Description=({item})=>{
                                         </div> 
                                         <p id="total">шт</p>
                                         
-                                        <button className="button_visible btn btn-primary" >КУПИТЬ</button>
+                                        <button className="button_visible btn btn-primary" onClick={()=>sentToCart()}>КУПИТЬ</button>
                                     </div>
                                 </div>
                             </div>  
@@ -73,7 +93,7 @@ const Description=({item})=>{
                             <div className="col-8">
                                 <h5 className="mt-4 mb-4">Описание</h5>
                                 <p>
-                                    {item.description}
+                                    {props.item.description}
                                 </p>
                             </div>                            
                         </div>

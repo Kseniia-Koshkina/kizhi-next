@@ -13,7 +13,7 @@ export default async function handler(req, res) {
         const user = await Users.findOne({ name:req.body.name});
         try{
             let index = user.basket.findIndex(
-                (item)=>item.id="000000001");
+                (item)=>item.id=req.body.item.id);
             console.log(index);
             user.basket.splice(index,1);
         }
