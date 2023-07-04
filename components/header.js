@@ -4,7 +4,6 @@ import 'styles/App.css';
 
 
 
-
 const Header=()=>{
     return(
         
@@ -25,6 +24,9 @@ const Header=()=>{
                                 <div className="collapse navbar-collapse" id="navbarContent">
                                 <ul className="navbar-nav me-auto ">
                                     <li className="nav-item">
+                                    <a className="nav-link "  href="/">ГЛАВНАЯ</a>
+                                    </li>
+                                    <li className="nav-item">
                                     <a className="nav-link "  href="#">ИКОНЫ</a>
                                     </li>
                                     <li className="nav-item">
@@ -32,7 +34,10 @@ const Header=()=>{
                                     </li>
                                     <li className="nav-item">
                                     <a className="nav-link "  href="#">СУВЕНИРЫ</a>
-                                    </li>                                   
+                                    </li>   
+                                    <li className="nav-item">
+                                    <a className="nav-link "  href="/cart">КОРЗИНА  <img style={{height:"30px", fill:"#FFFFFF"}}src="/images/empty_cart_mobile.svg"/></a>
+                                    </li>                                
                                 </ul>
                                 </div>
                             </div>
@@ -65,8 +70,9 @@ const Header=()=>{
                     </div>  
 
                     {/* <!-- Корзина --> */}
-                    <div className="col-3 d-none d-md-flex"> 
-                        <p>Basket</p>
+                    <div className="col-3 d-none d-md-flex "> 
+                        <a href="/cart" style={{paddingLeft:"25%"}}><img src="/images/empty_cart.svg"  style={{height:"60px", width:"auto",paddingLeft:"25%"}}></img></a>
+                        
                     </div>
 
                 </div>
@@ -74,6 +80,9 @@ const Header=()=>{
                 {/* <!--Навигация--> */}
                 <nav className="d-none navbar navbar-expand-md navbar-dark d-md-flex rounded navigation">                       
                     <ul className="navbar-nav">
+                        <li className="nav-item">
+                        <a className="nav-link" href="/">ГЛАВНАЯ</a>
+                        </li>
                         <li className="nav-item">
                         <a className="nav-link" href="#">ИКОНЫ</a>
                         </li>

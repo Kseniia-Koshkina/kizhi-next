@@ -37,9 +37,10 @@ const CartList=({item, changer})=>{
 
     return(
         <div className='row border rounded ' >
-            <div className='col-2' ><img className="cart_image" src={"/images/"+item.name+"/1.jpg"}/></div>
+            <div className='col-2'><img className="cart_image" src={"/images/"+item.name+"/1.jpg"}/></div>
             <div className='col-4'><p className='one_line_text pt-4'>{item.name}</p></div>
-            <div className='col-6'style={{position:"relative"}}><img onClick={()=>removeItem()} className="cart_cross"src="/images/x.svg"/></div>
+            <div className='col-4'><p className='pt-4' style={{textAlign:"center"}}>{item.price} руб.</p></div>
+            <div className='col-2'style={{position:"relative"}}><img onClick={()=>removeItem()} className="cart_cross"src="/images/x.svg"/></div>
         </div>
     );
 }

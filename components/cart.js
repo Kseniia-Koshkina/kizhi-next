@@ -13,6 +13,7 @@ const Cart=()=>{
 
     
     const [cartItem, setCartItem] = useState({name:"",basket:[]});
+    let summary = 0;
 
     useEffect( ()=>{
         fetch("http://localhost:3000/api/getCartItems",{
@@ -52,11 +53,17 @@ const Cart=()=>{
                 {cartItem.basket.length!==0 && <div className='container pb-5 pt-5'>
                 
                     {cartItem.basket.map((item,index)=>{
+                        summary+=item.price;
                         return(
                             <CartList key ={index} item={item} changer={setCartItem}></CartList>
                         )
                     })}
-                </div>}
+                        <div className='row' >
+                            
+                            <div className='col-2  border rounded '>  <p className="pt-4" style={{textAlign:"center"}}>Общая сумма: {summary}</p></div>
+                        </div>
+                    </div>}
+                
             </div>
         </div>
     )
